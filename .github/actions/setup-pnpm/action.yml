@@ -1,0 +1,20 @@
+name: Use PNPM
+description: Install and configure PNPM.
+
+inputs:
+  pnpm-version:
+    description: The PNPM version.
+    default: latest
+    required: true
+  store-path:
+    description: The PNPM store path.
+    default: ~/.pnpm-store
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - run: npm install --global pnpm@${{ inputs.pnpm-version }}
+      shell: pwsh
+    - run: pnpm config set store-dir ${{ inputs.store-path }}
+      shell: pwsh

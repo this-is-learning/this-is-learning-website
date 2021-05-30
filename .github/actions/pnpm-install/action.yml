@@ -1,0 +1,14 @@
+name: PNPM install
+description: Install and manage dependencies using PNPM.
+
+inputs:
+  install-options:
+    description: Options for the install command.
+
+runs:
+  using: composite
+  steps:
+    - run: pnpm install ${{ inputs.install-options }}
+      shell: pwsh
+    - run: pnpm store prune
+      shell: pwsh
