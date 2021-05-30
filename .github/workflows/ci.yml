@@ -1,7 +1,7 @@
 name: This is Learning CI
 
 env:
-  NODE_OPTIONS: --max_old_space_size=6144
+  NODE_OPTIONS: --max-old-space-size=6144
   NX_BRANCH: ${{ github.event.number }}
   NX_MAX_PARALLEL: 2
   NX_RUN_GROUP: ${{ github.run_id }}
