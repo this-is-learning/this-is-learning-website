@@ -24,8 +24,10 @@ devDependencies:
   '@nrwl/eslint-plugin-nx': 12.3.5_722a1f2999ae6ad5857a75c57dc30742
   '@nrwl/jest': 12.3.5
   '@nrwl/linter': 12.3.5
+  '@nrwl/nx-cloud': 12.1.3
   '@nrwl/tao': 12.3.5
   '@nrwl/workspace': 12.3.5_prettier@2.2.1
+  '@schematics/angular': 12.0.2
   '@types/jest': 26.0.23
   '@types/node': 14.17.1
   '@typescript-eslint/eslint-plugin': 4.19.0_f2ad7386ef3401c53424c22cc09210d8
@@ -217,8 +219,8 @@ packages:
       yarn: '>= 1.13.0'
     resolution:
       integrity: sha512-PS+SrRhAc/lyRfuBsi6Rt2yV7IA34B7T6J0K8/Av0GABZ83x+0vLiZC39eSPS1X8qcM/U09pCfDT8Q6ZQPCICA==
-  /@angular-eslint/eslint-plugin-template/12.0.0_37d3c723ab6a05619eb9da78096f75ca:
-    dependencies:
+  ? /@angular-eslint/eslint-plugin-template/12.0.0_37d3c723ab6a05619eb9da78096f75ca
+  : dependencies:
       '@angular/compiler': 12.0.2
       '@typescript-eslint/experimental-utils': 4.23.0_eslint@7.22.0+typescript@4.2.4
       aria-query: 4.2.2
@@ -647,8 +649,8 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-ArliyUsWDUqEGfWcmzpGUzNfLxTdTp6WU4IuP6QFSp9gGfWS6boxFCkJSJ/L4+RG8z/FnIU3WxCk6hPL9SSWeA==
-  /@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining/7.13.12_@babel+core@7.14.3:
-    dependencies:
+  ? /@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining/7.13.12_@babel+core@7.14.3
+  : dependencies:
       '@babel/core': 7.14.3
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/helper-skip-transparent-expression-wrappers': 7.12.1
@@ -713,8 +715,8 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-w2DtsfXBBJddJacXMBhElGEYqCZQqN99Se1qeYn8DVLB33owlrlLftIbMzn5nz1OITfDVknXF433tBrLEAOEjA==
-  /@babel/plugin-proposal-logical-assignment-operators/7.14.2_@babel+core@7.14.3:
-    dependencies:
+  ? /@babel/plugin-proposal-logical-assignment-operators/7.14.2_@babel+core@7.14.3
+  : dependencies:
       '@babel/core': 7.14.3
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/plugin-syntax-logical-assignment-operators': 7.10.4_@babel+core@7.14.3
@@ -1047,8 +1049,8 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-FW+WPjSR7hiUxMcKqyNjP05tQ2kmBCdpEpZHY1ARm96tGQCCBvXKnpjILtDplUnJ/eHZ0lALLM+d2lMFSpYJrQ==
-  /@babel/plugin-transform-member-expression-literals/7.12.13_@babel+core@7.14.3:
-    dependencies:
+  ? /@babel/plugin-transform-member-expression-literals/7.12.13_@babel+core@7.14.3
+  : dependencies:
       '@babel/core': 7.14.3
       '@babel/helper-plugin-utils': 7.13.0
     peerDependencies:
@@ -1097,8 +1099,8 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-nPZdnWtXXeY7I87UZr9VlsWme3Y0cfFFE41Wbxz4bbaexAjNMInXPFUpRRUJ8NoMm0Cw+zxbqjdPmLhcjfazMw==
-  /@babel/plugin-transform-named-capturing-groups-regex/7.12.13_@babel+core@7.14.3:
-    dependencies:
+  ? /@babel/plugin-transform-named-capturing-groups-regex/7.12.13_@babel+core@7.14.3
+  : dependencies:
       '@babel/core': 7.14.3
       '@babel/helper-create-regexp-features-plugin': 7.14.3_@babel+core@7.14.3
     peerDependencies:
@@ -1969,6 +1971,19 @@ packages:
       tslib: 2.2.0
     resolution:
       integrity: sha512-6YhjlDZFb2dk0kphdLUELj99bAhG/So+CO1E8/eJsTvK4Mf7LySaTamabR9meSJW7yu2WKxiIIm4Z69IBI1bNQ==
+  /@nrwl/nx-cloud/12.1.3:
+    dependencies:
+      axios: 0.21.1
+      chalk: 4.1.0
+      node-machine-id: 1.1.12
+      rxjs: 6.5.5
+      strip-json-comments: 3.1.1
+      tar: 5.0.5
+      uuid: 3.4.0
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha512-IC+CNSXGuInEnIwDS6wVl25vQJm5z9Duh1PzP5k0e30JcoUTqjL08KKwvzo8cmKpUvgLNo3rABc5J5F+fXaJGQ==
   /@nrwl/tao/12.3.5:
     dependencies:
       chalk: 4.1.0
@@ -2645,7 +2660,7 @@ packages:
       integrity: sha512-DCRfO/4nQ+89p/RK43i8Ezd41EqdGIU4ld7nGF8OQ14oc/we5rEntLCUa7+jrn3nn83BosfwZA0wb4pon2o8iQ==
   /ajv-formats/2.0.2:
     dependencies:
-      ajv: 8.2.0
+      ajv: 8.5.0
     peerDependenciesMeta:
       ajv:
         optional: true
@@ -2680,7 +2695,6 @@ packages:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
       uri-js: 4.4.1
-    dev: true
     resolution:
       integrity: sha512-Y2l399Tt1AguU3BPRP9Fn4eN+Or+StUGWCUpbnFyXSo8NZ9S4uj+AG2pjs5apK+ZMOwYOz1+a+VKvKH7CudXgQ==
   /alphanum-sort/1.0.2:
@@ -2941,6 +2955,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
+  /axios/0.21.1:
+    dependencies:
+      follow-redirects: 1.14.1_debug@4.3.1
+    dev: true
+    resolution:
+      integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   /axobject-query/2.2.0:
     dev: true
     resolution:
@@ -3486,6 +3506,10 @@ packages:
       fsevents: 2.3.2
     resolution:
       integrity: sha512-9+s+Od+W0VJJzawDma/gvBNQqkTiqYTWLuZoyAsivsI4AaWTCzHG06/TMjsf1cYe9Cb97UCEhjz7HvnPk2p/tw==
+  /chownr/1.1.4:
+    dev: true
+    resolution:
+      integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==
   /chownr/2.0.0:
     dev: true
     engines:
@@ -7660,6 +7684,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-h6kGXNs1XTGC2PlM4RGIuCXGijs=
+  /node-machine-id/1.1.12:
+    dev: true
+    resolution:
+      integrity: sha512-QNABxbrPa3qEIfrE6GOJ7BYIuignnJw7iQ2YPbc3Nla1HzRJjXzZOiikfF8m7eAMfichLt3M4VgLOetqgDmgGQ==
   /node-modules-regexp/1.0.0:
     dev: true
     engines:
@@ -9607,6 +9635,14 @@ packages:
       rxjs: ^6.0.0
     resolution:
       integrity: sha512-IJ8R/ZCFMHOcDIqoABs82jal00VrZx8Xkgfe7TOKoaRPAW5nH/VFlG23bXpeGdrmtqI9UobFPgUKgCuFc7Lncw==
+  /rxjs/6.5.5:
+    dependencies:
+      tslib: 1.14.1
+    dev: true
+    engines:
+      npm: '>=2.0.0'
+    resolution:
+      integrity: sha512-WfQI+1gohdf0Dai/Bbmk5L5ItH5tYqm3ki2c5GdWhKjalzjg93N3avFjVStyZZz+A2Em+ZxKH5bNghw9UeylGQ==
   /rxjs/6.6.7:
     dependencies:
       tslib: 1.14.1
@@ -10432,6 +10468,19 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-FBk4IesMV1rBxX2tfiK8RAmogtWn53puLOQlvO8XuwlgxcYbP4mVPS9Ph4aeamSyyVjOl24aYWAuc8U5kCVwMw==
+  /tar/5.0.5:
+    dependencies:
+      chownr: 1.1.4
+      fs-minipass: 2.1.0
+      minipass: 3.1.3
+      minizlib: 2.1.2
+      mkdirp: 0.5.5
+      yallist: 4.0.0
+    dev: true
+    engines:
+      node: '>= 8'
+    resolution:
+      integrity: sha512-MNIgJddrV2TkuwChwcSNds/5E9VijOiw7kAc1y5hTNJoLDSuIyid2QtLYiCYNnICebpuvjhPQZsXwUL0O3l7OQ==
   /tar/6.1.0:
     dependencies:
       chownr: 2.0.0
@@ -11469,8 +11518,10 @@ specifiers:
   '@nrwl/eslint-plugin-nx': ~12.3.5
   '@nrwl/jest': ~12.3.5
   '@nrwl/linter': ~12.3.5
+  '@nrwl/nx-cloud': ^12.1.3
   '@nrwl/tao': ~12.3.5
   '@nrwl/workspace': ~12.3.5
+  '@schematics/angular': ~12.0.0
   '@types/jest': ~26.0.8
   '@types/node': ^14.14.33
   '@typescript-eslint/eslint-plugin': ~4.19.0
