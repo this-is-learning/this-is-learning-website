@@ -110,6 +110,7 @@ jobs:
 
   e2e:
     runs-on: ubuntu-latest
+    container: cypress/browsers:node14.16.0-chrome90-ff88
 
     steps:
       - uses: actions/checkout@v2
