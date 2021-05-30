@@ -134,4 +134,4 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/pnpm-install
 
-      - run: pnpm e2e -- --max-parallel=$NX_MAX_PARALLEL
+      - run: pnpm e2e -- --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache
