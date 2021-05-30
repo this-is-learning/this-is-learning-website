@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "cli": {
+    "analytics": false,
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "this-is-learning",
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "this-is-learning": {
+      "projectType": "application",
+      "root": "apps/this-is-learning",
+      "sourceRoot": "apps/this-is-learning/src",
+      "prefix": "this-is-learning",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/this-is-learning/browser",
+            "index": "apps/this-is-learning/src/index.html",
+            "main": "apps/this-is-learning/src/main.ts",
+            "polyfills": "apps/this-is-learning/src/polyfills.ts",
+            "tsConfig": "apps/this-is-learning/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/this-is-learning/src/favicon.ico",
+              "apps/this-is-learning/src/assets"
+            ],
+            "styles": ["apps/this-is-learning/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/this-is-learning/src/environments/environment.ts",
+                  "with": "apps/this-is-learning/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "this-is-learning:build:production"
+            },
+            "development": {
+              "browserTarget": "this-is-learning:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "this-is-learning:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/this-is-learning/src/**/*.ts",
+              "apps/this-is-learning/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/this-is-learning"],
+          "options": {
+            "jestConfig": "apps/this-is-learning/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/apps/this-is-learning/server",
+            "main": "apps/this-is-learning/src/main.server.ts",
+            "tsConfig": "apps/this-is-learning/tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "apps/this-is-learning/src/environments/environment.ts",
+                  "with": "apps/this-is-learning/src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
+    },
+    "this-is-learning-e2e": {
+      "root": "apps/this-is-learning-e2e",
+      "sourceRoot": "apps/this-is-learning-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/this-is-learning-e2e/cypress.json",
+            "tsConfig": "apps/this-is-learning-e2e/tsconfig.e2e.json",
+            "devServerTarget": "this-is-learning:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "this-is-learning:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/this-is-learning-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  }
+}
