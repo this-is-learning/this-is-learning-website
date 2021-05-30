@@ -162,7 +162,12 @@
           },
           "configurations": {
             "ci": {
-              "cypressConfig": "apps/this-is-learning-e2e/cypress.ci.json"
+              "cypressConfig": "apps/this-is-learning-e2e/cypress.ci.json",
+              "browser": "chrome",
+              "env": {
+                "NODE_OPTIONS": "--max-old-space-size=6144"
+              },
+              "headless": true
             },
             "production": {
               "devServerTarget": "this-is-learning:serve:production"
