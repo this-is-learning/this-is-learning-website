@@ -9,6 +9,6 @@ runs:
   using: composite
   steps:
     - run: pnpm install ${{ inputs.install-options }}
-      shell: pwsh
+      shell: bash
     - run: pnpm store prune
-      shell: pwsh
+      shell: bash

@@ -15,6 +15,6 @@ runs:
   using: composite
   steps:
     - run: npm install --global pnpm@${{ inputs.pnpm-version }}
-      shell: pwsh
+      shell: bash
     - run: pnpm config set store-dir ${{ inputs.store-path }}
-      shell: pwsh
+      shell: bash
