@@ -161,6 +161,9 @@
             "devServerTarget": "this-is-learning:serve:development"
           },
           "configurations": {
+            "ci": {
+              "cypressConfig": "apps/this-is-learning-e2e/cypress.ci.json"
+            },
             "production": {
               "devServerTarget": "this-is-learning:serve:production"
             }
