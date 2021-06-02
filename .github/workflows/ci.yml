@@ -7,7 +7,7 @@ env:
   NX_RUN_GROUP: ${{ github.run_id }}
   node-version: 14.x
   pnpm-store-path: ~/.pnpm-store
-  pnpm-version: 5.x
+  pnpm-version: 6.x
 
 on:
   push:
@@ -37,8 +37,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ env.pnpm-store-path }}
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-node-${{ env.node-version }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
+            ${{ runner.os }}-node-${{ env.node-version }}-
             ${{ runner.os }}-
       - name: Install dependencies
         uses: ./.github/actions/pnpm-install
@@ -65,8 +66,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ env.pnpm-store-path }}
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-node-${{ env.node-version }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
+            ${{ runner.os }}-node-${{ env.node-version }}-
             ${{ runner.os }}-
       - name: Install dependencies
         uses: ./.github/actions/pnpm-install
@@ -93,8 +95,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ env.pnpm-store-path }}
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-node-${{ env.node-version }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
+            ${{ runner.os }}-node-${{ env.node-version }}-
             ${{ runner.os }}-
       - name: Install dependencies
         uses: ./.github/actions/pnpm-install
@@ -110,7 +113,6 @@ jobs:
 
   e2e:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node14.16.0-chrome90-ff88
 
     steps:
       - uses: actions/checkout@v2
@@ -120,19 +122,19 @@ jobs:
         with:
           node-version: ${{ env.node-version }}
 
-      - name: Use PNPM ${{ env.pnpm-version }}
-        uses: ./.github/actions/setup-pnpm
-        with:
-          pnpm-version: ${{ env.pnpm-version }}
-          store-path: ${{ env.pnpm-store-path }}
-      - name: Cache PNPM store
+      - name: Variable-Yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache Yarn cache directory
         uses: actions/cache@v2
         with:
-          path: ${{ env.pnpm-store-path }}
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          # Yes, hash the PNPM lockfile
+          key: ${{ runner.os }}-node-${{ env.node-version }}-yarn-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-
+            ${{ runner.os }}-node-${{ env.node-version }}-yarn-
+            ${{ runner.os }}-node-
       - name: Install dependencies
-        uses: ./.github/actions/pnpm-install
+        uses: yarn install
 
-      - run: pnpm e2e -- --configuration=ci --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache
+      - run: yarn e2e --configuration=ci --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache

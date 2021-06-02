@@ -1,6 +1,6 @@
 {
   "browser": "chrome",
-  "defaultCommandTimeout": 60000,
+  "defaultCommandTimeout": 10000,
   "fileServerFolder": ".",
   "fixturesFolder": "./src/fixtures",
   "headed": false,
