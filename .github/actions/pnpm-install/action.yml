@@ -8,6 +8,9 @@ inputs:
 runs:
   using: composite
   steps:
+    # Cypress has an issue with PNPM
+    - run: pnpm remove cypress
+      shell: bash
     - run: pnpm install ${{ inputs.install-options }}
       shell: bash
     - run: pnpm store prune
