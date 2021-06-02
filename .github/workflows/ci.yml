@@ -132,8 +132,8 @@ jobs:
           # Yes, hash the PNPM lockfile
           key: ${{ runner.os }}-node-${{ env.node-version }}-yarn-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-node-${{ env.node-version }}-yarn-
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-node-${{ env.node-version }}-
+            ${{ runner.os }}-
       - name: Install dependencies
         # Use Yarn because of Cypress issues with PNPM
         run: yarn install
