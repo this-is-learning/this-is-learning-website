@@ -1,35 +1,32 @@
 {
-  "version": 1,
+  "version": 2,
   "cli": {
-    "analytics": false,
     "defaultCollection": "@nrwl/angular"
   },
   "defaultProject": "this-is-learning",
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
-      },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
+  "generators": {
     "@nrwl/angular:application": {
-      "style": "scss",
+      "e2eTestRunner": "cypress",
       "linter": "eslint",
+      "style": "scss",
+      "tags": "type:app",
       "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
+      "viewEncapsulation": "None"
     },
     "@nrwl/angular:library": {
-      "style": "scss",
       "linter": "eslint",
+      "style": "scss",
       "unitTestRunner": "jest"
     },
-    "@nrwl/angular:component": {
-      "style": "scss"
+    "@nrwl/angular:storybook-configuration": {
+      "linter": "eslint"
+    },
+    "@schematics/angular:component": {
+      "changeDetection": "OnPush",
+      "displayBlock": true,
+      "export": true,
+      "style": "scss",
+      "viewEncapsulation": "None"
     }
   },
   "projects": {
@@ -37,10 +34,10 @@
       "projectType": "application",
       "root": "apps/this-is-learning",
       "sourceRoot": "apps/this-is-learning/src",
-      "prefix": "this-is-learning",
-      "architect": {
+      "prefix": "til",
+      "targets": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "executor": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/apps/this-is-learning/browser",
             "index": "apps/this-is-learning/src/index.html",
@@ -89,7 +86,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "executor": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "this-is-learning:build:production"
@@ -101,13 +98,13 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "executor": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "this-is-learning:build"
           }
         },
         "lint": {
-          "builder": "@nrwl/linter:eslint",
+          "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
               "apps/this-is-learning/src/**/*.ts",
@@ -116,7 +113,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/jest:jest",
+          "executor": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/this-is-learning"],
           "options": {
             "jestConfig": "apps/this-is-learning/jest.config.js",
@@ -124,7 +121,7 @@
           }
         },
         "server": {
-          "builder": "@angular-devkit/build-angular:server",
+          "executor": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/apps/this-is-learning/server",
             "main": "apps/this-is-learning/src/main.server.ts",
@@ -155,22 +152,30 @@
       "root": "apps/this-is-learning-e2e",
       "sourceRoot": "apps/this-is-learning-e2e/src",
       "projectType": "application",
-      "architect": {
+      "targets": {
         "e2e": {
-          "builder": "@nrwl/cypress:cypress",
+          "executor": "@nrwl/cypress:cypress",
           "options": {
             "cypressConfig": "apps/this-is-learning-e2e/cypress.json",
             "tsConfig": "apps/this-is-learning-e2e/tsconfig.e2e.json",
             "devServerTarget": "this-is-learning:serve:development"
           },
           "configurations": {
+            "ci": {
+              "cypressConfig": "apps/this-is-learning-e2e/cypress.ci.json",
+              "browser": "chrome",
+              "env": {
+                "NODE_OPTIONS": "--max-old-space-size=6144"
+              },
+              "headless": true
+            },
             "production": {
               "devServerTarget": "this-is-learning:serve:production"
             }
           }
         },
         "lint": {
-          "builder": "@nrwl/linter:eslint",
+          "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/this-is-learning-e2e/**/*.{js,ts}"]
           }

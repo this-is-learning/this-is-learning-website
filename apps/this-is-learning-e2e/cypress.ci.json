@@ -1,0 +1,16 @@
+{
+  "browser": "chrome",
+  "defaultCommandTimeout": 10000,
+  "fileServerFolder": ".",
+  "fixturesFolder": "./src/fixtures",
+  "headed": false,
+  "headless": true,
+  "integrationFolder": "./src/integration",
+  "modifyObstructiveCode": false,
+  "pluginsFile": "./src/plugins/index",
+  "supportFile": "./src/support/index.ts",
+  "video": false,
+  "videosFolder": "../../dist/cypress/apps/this-is-learning-e2e/videos",
+  "screenshotsFolder": "../../dist/cypress/apps/this-is-learning-e2e/screenshots",
+  "chromeWebSecurity": false
+}

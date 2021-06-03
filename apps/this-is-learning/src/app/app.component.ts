@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'this-is-learning-root',
+  selector: 'til-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
