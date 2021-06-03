@@ -158,15 +158,12 @@
           "options": {
             "cypressConfig": "apps/this-is-learning-e2e/cypress.json",
             "tsConfig": "apps/this-is-learning-e2e/tsconfig.e2e.json",
-            "devServerTarget": "this-is-learning:serve:development"
+            "devServerTarget": "this-is-learning:serve:development",
+            "browser": "chrome"
           },
           "configurations": {
             "ci": {
               "cypressConfig": "apps/this-is-learning-e2e/cypress.ci.json",
-              "browser": "chrome",
-              "env": {
-                "NODE_OPTIONS": "--max-old-space-size=6144"
-              },
               "headless": true
             },
             "production": {
