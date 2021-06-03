@@ -8,6 +8,6 @@ describe('this-is-learning', () => {
     // Example: cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to this-is-learning!');
+    getGreeting().contains('Hello, TiL!');
   });
 });
