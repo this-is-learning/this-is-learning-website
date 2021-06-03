@@ -119,32 +119,6 @@
             "jestConfig": "apps/this-is-learning/jest.config.js",
             "passWithNoTests": true
           }
-        },
-        "server": {
-          "executor": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/apps/this-is-learning/server",
-            "main": "apps/this-is-learning/src/main.server.ts",
-            "tsConfig": "apps/this-is-learning/tsconfig.server.json",
-            "inlineStyleLanguage": "scss"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "apps/this-is-learning/src/environments/environment.ts",
-                  "with": "apps/this-is-learning/src/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "development": {
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     },
