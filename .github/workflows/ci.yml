@@ -130,6 +130,9 @@ jobs:
           name: ${{ env.package-name }}
           path: ${{ env.package-path }}
 
+      - name: Disable Jekyll on GitHub Pages
+        run: touch ${{ env.package-path }}/.nojekyll
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
