@@ -1,23 +1,21 @@
 import { ChangeDetectionStrategy, Component, NgModule, ViewEncapsulation } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'til-app',
-  template: `<router-outlet></router-outlet>`,
+  selector: 'til-hello',
   styles: [
     `
-      til-app {
+      til-hello {
         display: block;
       }
     `,
   ],
+  template: `<h1>Hello, TiL!</h1>`,
 })
-export class AppComponent {}
+export class HelloComponent {}
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [RouterModule],
+  declarations: [HelloComponent],
 })
-export class AppScam {}
+export class HelloScam {}
