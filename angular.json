@@ -54,6 +54,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/this-is-learning-website/",
               "budgets": [
                 {
                   "type": "initial",
