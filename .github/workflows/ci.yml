@@ -103,7 +103,8 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/pnpm-install
 
-      - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL
+      #- run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL
+      - run: pnpm build -- --configuration=development --base-href=/this-is-learning-website/
       - run: pnpm scully
 
       - name: Upload static website package
