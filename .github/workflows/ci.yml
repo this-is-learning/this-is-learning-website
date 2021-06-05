@@ -106,7 +106,8 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/pnpm-install
 
-      - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL
+      # - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL
+      - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL --configuration=development
       - run: pnpm scully
 
       - name: Upload static website package
@@ -118,9 +119,9 @@ jobs:
 
   deploy:
     name: Deploy
-    if: >
-      github.ref == 'refs/heads/main' &&
-      (github.event_name == 'workflow_dispatch' || github.event_name == 'push')
+    # if: >
+    #   github.ref == 'refs/heads/main' &&
+    #   (github.event_name == 'workflow_dispatch' || github.event_name == 'push')
     needs: build
     runs-on: ubuntu-latest
 
