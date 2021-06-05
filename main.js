@@ -22,7 +22,7 @@ module.exports = webpackEmptyAsyncContext;
 
 /***/ }),
 
-/***/ 8196:
+/***/ 6832:
 /*!*************************************************************!*\
   !*** ./apps/this-is-learning/src/app/app-routing.module.ts ***!
   \*************************************************************/
@@ -33,10 +33,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppRoutingModule": () => (/* binding */ AppRoutingModule)
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 472);
-/* harmony import */ var _hello_hello_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hello/hello.component */ 6322);
-/* harmony import */ var _hello_hello_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hello/hello.module */ 1958);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 1619);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _hello_hello_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hello/hello.component */ 7708);
+/* harmony import */ var _hello_hello_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hello/hello.module */ 3219);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
 
 
 
@@ -58,7 +58,7 @@ AppRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2_
 
 /***/ }),
 
-/***/ 1265:
+/***/ 9402:
 /*!********************************************************!*\
   !*** ./apps/this-is-learning/src/app/app.component.ts ***!
   \********************************************************/
@@ -69,8 +69,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 1619);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 472);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 9895);
 
 
 class AppComponent {
@@ -83,7 +83,7 @@ AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
 
 /***/ }),
 
-/***/ 5135:
+/***/ 2822:
 /*!*****************************************************!*\
   !*** ./apps/this-is-learning/src/app/app.module.ts ***!
   \*****************************************************/
@@ -94,11 +94,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ 1507);
-/* harmony import */ var _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @scullyio/ng-lib */ 6864);
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-routing.module */ 8196);
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component */ 1265);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 1619);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
+/* harmony import */ var _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @scullyio/ng-lib */ 6938);
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-routing.module */ 6832);
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component */ 9402);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
 
 
 
@@ -114,7 +114,7 @@ AppModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵ
 
 /***/ }),
 
-/***/ 6322:
+/***/ 7708:
 /*!****************************************************************!*\
   !*** ./apps/this-is-learning/src/app/hello/hello.component.ts ***!
   \****************************************************************/
@@ -125,21 +125,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HelloComponent": () => (/* binding */ HelloComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 1619);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 8583);
+
 
 class HelloComponent {
+    constructor() {
+        this.now = new Date();
+    }
 }
 HelloComponent.ɵfac = function HelloComponent_Factory(t) { return new (t || HelloComponent)(); };
-HelloComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HelloComponent, selectors: [["til-hello"]], decls: 2, vars: 0, template: function HelloComponent_Template(rf, ctx) { if (rf & 1) {
+HelloComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HelloComponent, selectors: [["til-hello"]], decls: 5, vars: 3, template: function HelloComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h1");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Hello, Scully!");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, styles: ["til-hello {\n  display: block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFuZ3VsYXItcmVzb3VyY2U6c3R5bGUsMDk1MjdmMzZmMThhZThlZWFlNjQxZmMzODM1MjNlNzQiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ007RUFDRSxjQUFBO0FBQVIiLCJmaWxlIjoiYW5ndWxhci1yZXNvdXJjZTpzdHlsZSwwOTUyN2YzNmYxOGFlOGVlYWU2NDFmYzM4MzUyM2U3NCIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgdGlsLWhlbGxvIHtcbiAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICB9XG4gICAgIl19 */"], encapsulation: 2, changeDetection: 0 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](4, "date");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Build time: ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](4, 1, ctx.now), "");
+    } }, pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.DatePipe], styles: ["til-hello {\n  display: block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFuZ3VsYXItcmVzb3VyY2U6c3R5bGUsMDk1MjdmMzZmMThhZThlZWFlNjQxZmMzODM1MjNlNzQiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ007RUFDRSxjQUFBO0FBQVIiLCJmaWxlIjoiYW5ndWxhci1yZXNvdXJjZTpzdHlsZSwwOTUyN2YzNmYxOGFlOGVlYWU2NDFmYzM4MzUyM2U3NCIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgdGlsLWhlbGxvIHtcbiAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICB9XG4gICAgIl19 */"], encapsulation: 2, changeDetection: 0 });
 
 
 /***/ }),
 
-/***/ 1958:
+/***/ 3219:
 /*!*************************************************************!*\
   !*** ./apps/this-is-learning/src/app/hello/hello.module.ts ***!
   \*************************************************************/
@@ -150,21 +162,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HelloModule": () => (/* binding */ HelloModule)
 /* harmony export */ });
-/* harmony import */ var _hello_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hello.component */ 6322);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 1619);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 8583);
+/* harmony import */ var _hello_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hello.component */ 7708);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
+
 
 
 class HelloModule {
 }
 HelloModule.ɵfac = function HelloModule_Factory(t) { return new (t || HelloModule)(); };
 HelloModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: HelloModule });
-HelloModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({});
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](HelloModule, { declarations: [_hello_component__WEBPACK_IMPORTED_MODULE_0__.HelloComponent] }); })();
+HelloModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](HelloModule, { declarations: [_hello_component__WEBPACK_IMPORTED_MODULE_0__.HelloComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule] }); })();
 
 
 /***/ }),
 
-/***/ 2637:
+/***/ 3250:
 /*!***************************************************************!*\
   !*** ./apps/this-is-learning/src/environments/environment.ts ***!
   \***************************************************************/
@@ -193,7 +207,7 @@ const environment = {
 
 /***/ }),
 
-/***/ 9722:
+/***/ 5329:
 /*!*******************************************!*\
   !*** ./apps/this-is-learning/src/main.ts ***!
   \*******************************************/
@@ -201,10 +215,10 @@ const environment = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ 1507);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 1619);
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/app.module */ 5135);
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./environments/environment */ 2637);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/app.module */ 2822);
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./environments/environment */ 3250);
 
 
 
@@ -224,7 +238,7 @@ _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.platformBrowser()
 /******/ "use strict";
 /******/ 
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ __webpack_require__.O(0, ["vendor"], () => (__webpack_exec__(9722)));
+/******/ __webpack_require__.O(0, ["vendor"], () => (__webpack_exec__(5329)));
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);

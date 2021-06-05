@@ -1,6 +1,6 @@
 (self["webpackChunkthis_is_learning"] = self["webpackChunkthis_is_learning"] || []).push([["polyfills"],{
 
-/***/ 7234:
+/***/ 3136:
 /*!************************************************!*\
   !*** ./apps/this-is-learning/src/polyfills.ts ***!
   \************************************************/
@@ -8,9 +8,9 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! zone.js */ 1505);
+/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! zone.js */ 7277);
 /* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(zone_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var zone_js_dist_task_tracking__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! zone.js/dist/task-tracking */ 512);
+/* harmony import */ var zone_js_dist_task_tracking__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! zone.js/dist/task-tracking */ 8769);
 /* harmony import */ var zone_js_dist_task_tracking__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(zone_js_dist_task_tracking__WEBPACK_IMPORTED_MODULE_1__);
 /**
  * This file includes polyfills needed by Angular and is loaded before the app.
@@ -78,10 +78,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 512:
-/*!**************************************************************************************!*\
-  !*** ./node_modules/.pnpm/zone.js@0.11.4/node_modules/zone.js/dist/task-tracking.js ***!
-  \**************************************************************************************/
+/***/ 8769:
+/*!****************************************************!*\
+  !*** ./node_modules/zone.js/dist/task-tracking.js ***!
+  \****************************************************/
 /***/ ((module, exports, __webpack_require__) => {
 
 "use strict";
@@ -178,10 +178,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
 /***/ }),
 
-/***/ 1505:
-/*!*********************************************************************************!*\
-  !*** ./node_modules/.pnpm/zone.js@0.11.4/node_modules/zone.js/fesm2015/zone.js ***!
-  \*********************************************************************************/
+/***/ 7277:
+/*!***********************************************!*\
+  !*** ./node_modules/zone.js/fesm2015/zone.js ***!
+  \***********************************************/
 /***/ (() => {
 
 "use strict";
@@ -3150,7 +3150,7 @@ Zone.__load_patch('PromiseRejectionEvent', (global, Zone) => {
 /******/ "use strict";
 /******/ 
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ var __webpack_exports__ = (__webpack_exec__(7234));
+/******/ var __webpack_exports__ = (__webpack_exec__(3136));
 /******/ }
 ]);
 //# sourceMappingURL=polyfills.js.map
