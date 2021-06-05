@@ -1,5 +1,4 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
     "defaultCollection": "@nrwl/angular"
@@ -7,16 +6,16 @@
   "defaultProject": "this-is-learning",
   "schematics": {
     "@nrwl/angular:application": {
-      "e2eTestRunner": "cypress",
-      "linter": "eslint",
       "style": "scss",
-      "tags": "type:app",
+      "linter": "eslint",
       "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress",
+      "tags": "type:app",
       "viewEncapsulation": "None"
     },
     "@nrwl/angular:library": {
-      "linter": "eslint",
       "style": "scss",
+      "linter": "eslint",
       "unitTestRunner": "jest"
     },
     "@nrwl/angular:storybook-configuration": {
@@ -28,6 +27,9 @@
       "export": true,
       "style": "scss",
       "viewEncapsulation": "None"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   },
   "projects": {
@@ -160,6 +162,31 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/this-is-learning-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "publications-feature-this-is-angular": {
+      "projectType": "library",
+      "root": "libs/publications/feature-this-is-angular",
+      "sourceRoot": "libs/publications/feature-this-is-angular/src",
+      "prefix": "this-is-learning",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/publications/feature-this-is-angular"],
+          "options": {
+            "jestConfig": "libs/publications/feature-this-is-angular/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/publications/feature-this-is-angular/src/**/*.ts",
+              "libs/publications/feature-this-is-angular/src/**/*.html"
+            ]
           }
         }
       }

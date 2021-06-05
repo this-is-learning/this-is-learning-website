@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@this-is-learning/publications/feature-this-is-angular": [
+        "libs/publications/feature-this-is-angular/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

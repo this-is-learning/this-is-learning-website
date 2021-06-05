@@ -9,6 +9,13 @@ const routes: Routes = [
     path: '',
     component: HelloComponent,
   },
+  {
+    path: 'this-is-angular',
+    loadChildren: () =>
+      import('@this-is-learning/publications/feature-this-is-angular').then(
+        (esModule) => esModule.PublicationsFeatureThisIsAngularModule
+      ),
+  },
 ];
 
 @NgModule({
