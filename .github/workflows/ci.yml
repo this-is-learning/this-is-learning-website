@@ -111,7 +111,7 @@ jobs:
         run: pnpm ngcc
 
       # - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL
-      - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL --configuration=development
+      - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL --configuration=development --skip-nx-cache
       - run: pnpm scully
 
       - name: Upload static website package
