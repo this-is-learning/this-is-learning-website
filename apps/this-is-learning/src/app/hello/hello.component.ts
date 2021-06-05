@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  NgModule,
-  ViewEncapsulation,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,8 +14,3 @@ import {
   template: `<h1>Hello, TiL!</h1>`,
 })
 export class HelloComponent {}
-
-@NgModule({
-  declarations: [HelloComponent],
-})
-export class HelloScam {}
