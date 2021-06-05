@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { HelloScam } from './../hello/hello.scam';
 import { AppComponent } from './app.component';
+import { AppScam } from './app.scam';
 
 describe(AppComponent.name, () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HelloScam, RouterTestingModule],
+      imports: [AppScam, RouterTestingModule],
     }).compileComponents();
   });
 
