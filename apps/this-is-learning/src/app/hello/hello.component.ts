@@ -13,7 +13,7 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
   ],
   template: `
     <h1>Hello, Scully!</h1>
-    <p>Build time: {{ now | date: long }}</p>
+    <p>Build time: {{ now | date: 'long' }}</p>
   `,
 })
 export class HelloComponent {
