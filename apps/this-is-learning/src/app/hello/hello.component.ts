@@ -11,6 +11,6 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
       }
     `,
   ],
-  template: `<h1>Hello, TiL!</h1>`,
+  template: `<h1>Hello, Scully!</h1>`,
 })
 export class HelloComponent {}
