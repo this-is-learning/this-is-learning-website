@@ -102,7 +102,7 @@ jobs:
       - name: Run Angular Compatibility Compiler
         run: yarn ngcc
 
-      - run: yarn build --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache
+      - run: yarn build --max-parallel=$NX_MAX_PARALLEL
       - run: yarn scully
 
       - name: Upload static website package
