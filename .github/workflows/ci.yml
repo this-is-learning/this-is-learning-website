@@ -95,18 +95,18 @@ jobs:
         with:
           pnpm-version: ${{ env.pnpm-version }}
           store-path: ${{ env.pnpm-store-path }}
-      - name: Cache PNPM store
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.pnpm-store-path }}
-          key: ${{ runner.os }}-node-${{ env.node-version }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ env.node-version }}-
-            ${{ runner.os }}-
+      # - name: Cache PNPM store
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ${{ env.pnpm-store-path }}
+      #     key: ${{ runner.os }}-node-${{ env.node-version }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-node-${{ env.node-version }}-
+      #       ${{ runner.os }}-
       - name: Install dependencies
         uses: ./.github/actions/pnpm-install
 
-      - run: pnpm ngcc
+      - run: pnpx ngcc --first-only --properties es2015 module fesm2015 esm2015 browser main --create-ivy-entry-points
 
       # - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL
       - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL --configuration=development
