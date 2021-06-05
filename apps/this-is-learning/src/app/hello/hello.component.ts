@@ -3,14 +3,19 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'til-app',
-  template: `<router-outlet></router-outlet>`,
+  selector: 'til-hello',
   styles: [
     `
-      til-app {
+      til-hello {
         display: block;
       }
     `,
   ],
+  template: `
+    <h1>Hello, Scully!</h1>
+    <p>Build time: {{ now | date: 'long' }}</p>
+  `,
 })
-export class AppComponent {}
+export class HelloComponent {
+  now = new Date();
+}

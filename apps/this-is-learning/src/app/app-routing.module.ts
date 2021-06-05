@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HelloComponent, HelloScam } from './hello.component';
+import { HelloComponent } from './hello/hello.component';
+import { HelloModule } from './hello/hello.module';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), HelloScam],
+  imports: [RouterModule.forRoot(routes), HelloModule],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
