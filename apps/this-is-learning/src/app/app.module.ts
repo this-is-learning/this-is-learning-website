@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent } from './app/app.component';
+import { AppScam } from './app/app.scam';
 
 @NgModule({
   bootstrap: [AppComponent],
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, ScullyLibModule],
+  imports: [BrowserModule, AppRoutingModule, ScullyLibModule, AppScam],
 })
 export class AppModule {}

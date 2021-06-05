@@ -7,4 +7,4 @@ import { HelloComponent } from './hello.component';
   declarations: [HelloComponent],
   imports: [CommonModule],
 })
-export class HelloModule {}
+export class HelloScam {}
