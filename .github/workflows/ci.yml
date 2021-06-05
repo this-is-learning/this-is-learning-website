@@ -109,8 +109,7 @@ jobs:
       - run: yarn install
       - run: yarn ngcc
 
-      # - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache
-      - run: yarn build -- --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache --configuration=development
+      - run: yarn build -- --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache
       - run: yarn scully
 
       - name: Upload static website package
