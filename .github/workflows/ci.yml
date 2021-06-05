@@ -75,6 +75,7 @@ jobs:
             ${{ runner.os }}-
       - name: Install dependencies
         uses: ./.github/actions/pnpm-install
+      - run: pnpm ngcc
 
       - run: pnpm test -- --max-parallel=$NX_MAX_PARALLEL
 
@@ -90,25 +91,27 @@ jobs:
         with:
           node-version: ${{ env.node-version }}
 
-      - name: Use PNPM ${{ env.pnpm-version }}
-        uses: ./.github/actions/setup-pnpm
-        with:
-          pnpm-version: ${{ env.pnpm-version }}
-          store-path: ${{ env.pnpm-store-path }}
-      - name: Cache PNPM store
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.pnpm-store-path }}
-          key: ${{ runner.os }}-node-${{ env.node-version }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ env.node-version }}-
-            ${{ runner.os }}-
-      - name: Install dependencies
-        uses: ./.github/actions/pnpm-install
+      # - name: Use PNPM ${{ env.pnpm-version }}
+      #   uses: ./.github/actions/setup-pnpm
+      #   with:
+      #     pnpm-version: ${{ env.pnpm-version }}
+      #     store-path: ${{ env.pnpm-store-path }}
+      # - name: Cache PNPM store
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ${{ env.pnpm-store-path }}
+      #     key: ${{ runner.os }}-node-${{ env.node-version }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-node-${{ env.node-version }}-
+      #       ${{ runner.os }}-
+      # - name: Install dependencies
+      #   uses: ./.github/actions/pnpm-install
+      - run: yarn install
+      - run: yarn ngcc
 
       # - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache
-      - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache --configuration=development
-      - run: pnpm scully
+      - run: yarn build -- --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache --configuration=development
+      - run: yarn scully
 
       - name: Upload static website package
         uses: actions/upload-artifact@v2
@@ -172,5 +175,6 @@ jobs:
       - name: Install dependencies
         # Use Yarn because of Cypress issues with PNPM
         run: yarn install
+      - run: yarn ngcc
 
       - run: yarn e2e --configuration=ci --max-parallel=$NX_MAX_PARALLEL

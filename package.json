@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "node ./decorate-angular-cli.js",
+    "ngcc": "ngcc --first-only --properties es2015 module fesm2015 esm2015 browser main --create-ivy-entry-points",
     "ng": "nx",
     "nx": "nx",
     "start": "nx serve",
