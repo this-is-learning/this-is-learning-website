@@ -117,7 +117,10 @@ jobs:
     # if: >
     #   github.ref == 'refs/heads/main' &&
     #   (github.event_name == 'workflow_dispatch' || github.event_name == 'push')
-    needs: build
+    needs:
+      - build
+      - e2e
+      - test
     runs-on: ubuntu-latest
 
     env:
