@@ -11,6 +11,11 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
       }
     `,
   ],
-  template: `<h1>Hello, Scully!</h1>`,
+  template: `
+    <h1>Hello, Scully!</h1>
+    <p>Build time: {{now | date}}</p>
+  `,
 })
-export class HelloComponent {}
+export class HelloComponent {
+  now = new Date();
+}
