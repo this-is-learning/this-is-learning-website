@@ -19,6 +19,7 @@ on:
 
 jobs:
   lint:
+    name: Lint and check
     runs-on: ubuntu-latest
 
     steps:
@@ -48,6 +49,7 @@ jobs:
       - run: pnpm lint -- --max-parallel=$NX_MAX_PARALLEL
 
   test:
+    name: Unit and integration test
     runs-on: ubuntu-latest
 
     steps:
@@ -77,6 +79,7 @@ jobs:
       - run: pnpm test -- --max-parallel=$NX_MAX_PARALLEL
 
   build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -115,8 +118,10 @@ jobs:
           if-no-files-found: error
 
   deploy:
-    name: Deploy to GitHub Pages
-    # if: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || github.event_name == 'push') }}
+    name: Deploy
+    if: >
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'workflow_dispatch' || github.event_name == 'push')
     needs: build
     runs-on: ubuntu-latest
 
@@ -141,6 +146,7 @@ jobs:
           folder: ${{ env.package-path }}
 
   e2e:
+    name: End-to-end test
     runs-on: ubuntu-latest
 
     steps:
@@ -167,4 +173,4 @@ jobs:
         # Use Yarn because of Cypress issues with PNPM
         run: yarn install
 
-      - run: yarn e2e --configuration=ci --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache
+      - run: yarn e2e --configuration=ci --max-parallel=$NX_MAX_PARALLEL
