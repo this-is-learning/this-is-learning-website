@@ -7,8 +7,6 @@ env:
   NX_RUN_GROUP: ${{ github.run_id }}
   node-version: 14.x
   package-name: this-is-learning-package
-  pnpm-store-path: ~/.pnpm-store
-  pnpm-version: 6.x
 
 on:
   push:
@@ -30,23 +28,21 @@ jobs:
         with:
           node-version: ${{ env.node-version }}
 
-      - name: Use PNPM ${{ env.pnpm-version }}
-        uses: ./.github/actions/setup-pnpm
-        with:
-          pnpm-version: ${{ env.pnpm-version }}
-          store-path: ${{ env.pnpm-store-path }}
-      - name: Cache PNPM store
+      - name: Variable-Yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache Yarn cache directory
         uses: actions/cache@v2
         with:
-          path: ${{ env.pnpm-store-path }}
-          key: ${{ runner.os }}-node-${{ env.node-version }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ env.node-version }}-yarn-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ env.node-version }}-
             ${{ runner.os }}-
       - name: Install dependencies
-        uses: ./.github/actions/pnpm-install
+        run: yarn install
 
-      - run: pnpm lint -- --max-parallel=$NX_MAX_PARALLEL
+      - run: yarn lint --max-parallel=$NX_MAX_PARALLEL
 
   test:
     name: Unit and integration test
@@ -60,24 +56,23 @@ jobs:
         with:
           node-version: ${{ env.node-version }}
 
-      - name: Use PNPM ${{ env.pnpm-version }}
-        uses: ./.github/actions/setup-pnpm
-        with:
-          pnpm-version: ${{ env.pnpm-version }}
-          store-path: ${{ env.pnpm-store-path }}
-      - name: Cache PNPM store
+      - name: Variable-Yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache Yarn cache directory
         uses: actions/cache@v2
         with:
-          path: ${{ env.pnpm-store-path }}
-          key: ${{ runner.os }}-node-${{ env.node-version }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ env.node-version }}-yarn-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ env.node-version }}-
             ${{ runner.os }}-
       - name: Install dependencies
-        uses: ./.github/actions/pnpm-install
-      - run: pnpm ngcc
+        run: yarn install
+      - name: Run Angular Compatibility Compiler
+        run: yarn ngcc
 
-      - run: pnpm test -- --max-parallel=$NX_MAX_PARALLEL
+      - run: yarn test --max-parallel=$NX_MAX_PARALLEL
 
   build:
     name: Build
@@ -91,24 +86,24 @@ jobs:
         with:
           node-version: ${{ env.node-version }}
 
-      - name: Use PNPM ${{ env.pnpm-version }}
-        uses: ./.github/actions/setup-pnpm
-        with:
-          pnpm-version: ${{ env.pnpm-version }}
-          store-path: ${{ env.pnpm-store-path }}
-      - name: Cache PNPM store
+      - name: Variable-Yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache Yarn cache directory
         uses: actions/cache@v2
         with:
-          path: ${{ env.pnpm-store-path }}
-          key: ${{ runner.os }}-node-${{ env.node-version }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ env.node-version }}-yarn-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ env.node-version }}-
             ${{ runner.os }}-
       - name: Install dependencies
-        uses: ./.github/actions/pnpm-install
+        run: yarn install
+      - name: Run Angular Compatibility Compiler
+        run: yarn ngcc
 
-      - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache
-      - run: pnpm scully
+      - run: yarn build --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache
+      - run: yarn scully
 
       - name: Upload static website package
         uses: actions/upload-artifact@v2
@@ -164,14 +159,13 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          # Yes, hash the PNPM lockfile
-          key: ${{ runner.os }}-node-${{ env.node-version }}-yarn-${{ hashFiles('pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-node-${{ env.node-version }}-yarn-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ env.node-version }}-
             ${{ runner.os }}-
       - name: Install dependencies
-        # Use Yarn because of Cypress issues with PNPM
         run: yarn install
-      - run: yarn ngcc
+      - name: Run Angular Compatibility Compiler
+        run: yarn ngcc
 
       - run: yarn e2e --configuration=ci --max-parallel=$NX_MAX_PARALLEL
