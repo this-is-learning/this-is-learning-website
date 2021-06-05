@@ -75,8 +75,6 @@ jobs:
             ${{ runner.os }}-
       - name: Install dependencies
         uses: ./.github/actions/pnpm-install
-      - name: Run Angular Compatibility Compiler
-        run: pnpm ngcc
 
       - run: pnpm test -- --max-parallel=$NX_MAX_PARALLEL
 
@@ -107,8 +105,6 @@ jobs:
       #       ${{ runner.os }}-
       - name: Install dependencies
         uses: ./.github/actions/pnpm-install
-      - name: Run Angular Compatibility Compiler
-        run: pnpm ngcc
 
       # - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL
       - run: pnpm build -- --max-parallel=$NX_MAX_PARALLEL --configuration=development --skip-nx-cache
@@ -176,7 +172,5 @@ jobs:
       - name: Install dependencies
         # Use Yarn because of Cypress issues with PNPM
         run: yarn install
-      - name: Run Angular Compatibility Compiler
-        run: yarn ngcc
 
       - run: yarn e2e --configuration=ci --max-parallel=$NX_MAX_PARALLEL
