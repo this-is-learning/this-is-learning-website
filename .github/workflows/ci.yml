@@ -171,4 +171,4 @@ jobs:
       - name: Run Angular Compatibility Compiler
         run: yarn ngcc
 
-      - run: yarn e2e --configuration=ci --max-parallel=$NX_MAX_PARALLEL
+      - run: yarn e2e --configuration=ci --max-parallel=$NX_MAX_PARALLEL --skip-nx-cache
