@@ -126,7 +126,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      package-path: ./this-is-learning/
+      package-path: ./this-is-learning
 
     steps:
       - uses: actions/checkout@v2
