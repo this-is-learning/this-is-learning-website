@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HelloComponent, HelloScam } from './hello.component';
+import { HelloComponent } from './hello/hello.component';
+import { HelloScam } from './hello/hello.scam';
 
 const routes: Routes = [
   {
