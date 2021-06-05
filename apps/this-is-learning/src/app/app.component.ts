@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, NgModule, ViewEncapsulation } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -14,3 +15,9 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
   ],
 })
 export class AppComponent {}
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [RouterModule],
+})
+export class AppScam {}
