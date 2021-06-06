@@ -1,6 +1,5 @@
 import { HandledRoute, registerPlugin } from '@scullyio/scully';
 import RssParser from 'rss-parser';
-import { stripHtml } from 'string-strip-html';
 
 interface DevCommunityRssFeed {
   readonly language: string;
@@ -27,11 +26,7 @@ async function fromRssPlugin(
   options: FromRssOptions
 ): Promise<HandledRoute[]> {
   const feed = await rssParser.parseURL(options.rss);
-  const items = feed.items.map((article) => ({
-    ...article,
-    description:
-      stripHtml(article.description).result.substr(0, 255) + ' (...)',
-  }));
+  const items = feed.items;
 
   return [
     {
