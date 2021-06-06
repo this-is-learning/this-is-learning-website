@@ -1,5 +1,6 @@
 import { ScullyConfig } from '@scullyio/scully';
-import { fromRss } from "./scully/plugins/from-rss.plugin"
+
+import { fromRss } from './scully/plugins/from-rss.plugin';
 
 export const config: ScullyConfig = {
   projectRoot: './apps/this-is-learning/src',
