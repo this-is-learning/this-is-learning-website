@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "postinstall": "node ./decorate-angular-cli.js && yarn patch-commonjs-dependencies",
+    "postinstall": "node ./decorate-angular-cli.js && yarn patch-commonjs-dependencies && yarn ngcc",
     "patch-commonjs-dependencies": "json -I -f node_modules/rss-parser/package.json -e \"this.main = 'dist/rss-parser.js';\"",
     "ngcc": "ngcc --first-only --properties es2015 module fesm2015 esm2015 browser main --create-ivy-entry-points",
     "ng": "nx",
