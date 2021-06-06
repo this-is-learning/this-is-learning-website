@@ -1,4 +1,5 @@
 import { ScullyConfig } from '@scullyio/scully';
+import { fromRss } from "./scully/plugins/from-rss.plugin"
 
 export const config: ScullyConfig = {
   projectRoot: './apps/this-is-learning/src',
@@ -7,11 +8,11 @@ export const config: ScullyConfig = {
   routes: {
     '/this-is-angular': {
       rss: 'https://dev.to/feed/this-is-angular',
-      type: 'tilFromRss',
+      type: fromRss,
     },
     '/this-is-learning': {
       rss: 'https://dev.to/feed/this-is-learning',
-      type: 'tilFromRss',
+      type: fromRss,
     },
   },
 };
