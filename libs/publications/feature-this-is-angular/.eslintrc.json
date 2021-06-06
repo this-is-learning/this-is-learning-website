@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "thisIsLearning",
+            "prefix": "til",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "this-is-learning",
+            "prefix": "til",
             "style": "kebab-case"
           }
         ]

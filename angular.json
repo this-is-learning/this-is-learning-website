@@ -6,16 +6,21 @@
   "defaultProject": "this-is-learning",
   "schematics": {
     "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
       "e2eTestRunner": "cypress",
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "linter": "eslint",
+      "prefix": "til",
+      "style": "scss",
+      "unitTestRunner": "jest",
       "tags": "type:app",
       "viewEncapsulation": "None"
     },
     "@nrwl/angular:library": {
-      "style": "scss",
+      "changeDetection": "OnPush",
       "linter": "eslint",
+      "prefix": "til",
+      "style": "scss",
       "unitTestRunner": "jest"
     },
     "@nrwl/angular:storybook-configuration": {
@@ -170,7 +175,7 @@
       "projectType": "library",
       "root": "libs/publications/feature-this-is-angular",
       "sourceRoot": "libs/publications/feature-this-is-angular/src",
-      "prefix": "this-is-learning",
+      "prefix": "til",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
