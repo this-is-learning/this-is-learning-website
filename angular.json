@@ -58,7 +58,8 @@
               "apps/this-is-learning/src/assets"
             ],
             "styles": ["apps/this-is-learning/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": ["rss-parser"]
           },
           "configurations": {
             "production": {
