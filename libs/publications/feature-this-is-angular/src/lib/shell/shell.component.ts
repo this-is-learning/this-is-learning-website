@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'til-this-is-angular-shell',
   styles: [
     `
