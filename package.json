@@ -30,8 +30,9 @@
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "scully": "scully --noPrompt true",
-    "scully:serve": "scully serve --noPrompt true"
+    "scully": "scully --noPrompt",
+    "scully:scan": "yarn scully --scanRoutes",
+    "scully:serve": "yarn scully serve"
   },
   "dependencies": {
     "@angular/animations": "^12.0.0",
