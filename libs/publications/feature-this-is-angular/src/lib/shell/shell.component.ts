@@ -1,9 +1,9 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ViewEncapsulation,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { DevCommunityRssItems } from '../dev-community-rss-parser.token';
 
 const selector = 'til-this-is-angular-shell';
 @Component({
@@ -18,12 +18,26 @@ const selector = 'til-this-is-angular-shell';
     `,
   ],
   template: `
-    <h1>TiA shell</h1>
+    <h1>
+      <a [href]="rssUrl$ | async" target="_blank" rel="nofollow noopener"
+        >This is Angular</a
+      >
+    </h1>
 
-    <h2>Route data</h2>
-    <pre><code>{{ route.data | async | json }}</code></pre>
+    <article
+      til-article
+      *ngFor="let rssItem of (rssItems$ | async) ?? []"
+      [rssItem]="rssItem"
+    ></article>
   `,
 })
 export class ShellComponent {
-  constructor(public route: ActivatedRoute) {}
+  rssItems$: Observable<DevCommunityRssItems> = this.route.data.pipe(
+    map((data) => data.rssItems)
+  );
+  rssUrl$: Observable<string> = this.route.data.pipe(
+    map((data) => data.rssUrl)
+  );
+
+  constructor(private route: ActivatedRoute) {}
 }
