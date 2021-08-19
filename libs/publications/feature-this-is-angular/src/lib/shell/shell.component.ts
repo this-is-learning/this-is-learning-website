@@ -5,13 +5,14 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+const selector = 'til-this-is-angular-shell';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'til-this-is-angular-shell',
+  selector,
   styles: [
     `
-      til-this-is-angular-shell {
+      ${selector} {
         display: block;
       }
     `,

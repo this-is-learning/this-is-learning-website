@@ -4,13 +4,15 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+const selector = 'til-hello';
+
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'til-hello',
+  selector,
   styles: [
     `
-      til-hello {
+      ${selector} {
         display: block;
       }
     `,
