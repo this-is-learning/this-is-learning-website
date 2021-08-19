@@ -30,6 +30,9 @@
     "this-is-learning-e2e": {
       "tags": [],
       "implicitDependencies": ["this-is-learning"]
+    },
+    "publications-feature-this-is-angular": {
+      "tags": ["scope:publications", "type:feature"]
     }
   }
 }

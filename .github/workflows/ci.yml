@@ -69,8 +69,6 @@ jobs:
             ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
-      - name: Run Angular Compatibility Compiler
-        run: yarn ngcc
 
       - run: yarn test --max-parallel=$NX_MAX_PARALLEL
 
@@ -99,8 +97,6 @@ jobs:
             ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
-      - name: Run Angular Compatibility Compiler
-        run: yarn ngcc
 
       - run: yarn build --max-parallel=$NX_MAX_PARALLEL
       - run: yarn scully
@@ -168,7 +164,5 @@ jobs:
             ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
-      - name: Run Angular Compatibility Compiler
-        run: yarn ngcc
 
       - run: yarn e2e --configuration=ci --max-parallel=$NX_MAX_PARALLEL
