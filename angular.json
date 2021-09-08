@@ -174,7 +174,7 @@
       "projectType": "library",
       "root": "libs/navigation",
       "sourceRoot": "libs/navigation/src",
-      "prefix": "this-is-learning",
+      "prefix": "til",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
