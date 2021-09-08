@@ -9,6 +9,22 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "til",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "til",
+            "style": "kebab-case"
+          }
+        ]
       }
     },
     {
