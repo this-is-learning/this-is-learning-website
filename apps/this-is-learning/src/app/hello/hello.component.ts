@@ -4,6 +4,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
@@ -18,6 +19,7 @@ import {
   template: `
     <h1>Hello, Scully!</h1>
     <p>Render time: {{ now | date: 'long' }}</p>
+    <til-navigation></til-navigation>
   `,
 })
 export class HelloComponent {
