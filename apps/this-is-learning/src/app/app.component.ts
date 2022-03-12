@@ -8,13 +8,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   selector: 'til-app',
-  template: `<router-outlet></router-outlet>`,
-  styles: [
-    `
-      til-app {
-        display: block;
-      }
-    `,
-  ],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {}
