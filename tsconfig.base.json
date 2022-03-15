@@ -15,7 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@this-is-learning/navigation": ["libs/navigation/src/index.ts"],
       "@this-is-learning/navbar": ["libs/navbar/src/index.ts"]
     }
   },

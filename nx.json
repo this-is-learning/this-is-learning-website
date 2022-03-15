@@ -31,9 +31,6 @@
       "tags": [],
       "implicitDependencies": ["this-is-learning"]
     },
-    "navigation": {
-      "tags": []
-    },
     "navbar": {
       "tags": []
     }
