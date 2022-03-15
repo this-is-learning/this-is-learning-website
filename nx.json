@@ -33,6 +33,9 @@
     },
     "navigation": {
       "tags": []
+    },
+    "navbar": {
+      "tags": []
     }
   }
 }

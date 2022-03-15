@@ -55,7 +55,6 @@
             "styles": [
               "apps/this-is-learning/src/styles.scss",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
-
             ],
             "scripts": []
           },
@@ -190,6 +189,31 @@
             "lintFilePatterns": [
               "libs/navigation/src/**/*.ts",
               "libs/navigation/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "navbar": {
+      "projectType": "library",
+      "root": "libs/navbar",
+      "sourceRoot": "libs/navbar/src",
+      "prefix": "this-is-learning",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/navbar"],
+          "options": {
+            "jestConfig": "libs/navbar/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/navbar/src/**/*.ts",
+              "libs/navbar/src/**/*.html"
             ]
           }
         }
