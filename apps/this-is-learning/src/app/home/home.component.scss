@@ -146,11 +146,17 @@ img {
 .stats .card {
   height: 300px;
   transition: transform 0.2s ease-in;
+  cursor: pointer;
 }
 .stats .card h2 a {
   text-align: start;
   color: #f4f4f4;
   font-size: 26px;
+}
+.stats .card h2 a:hover
+{
+  border-bottom: 2px green solid;
+
 }
 .title {
   font-weight: 100;
