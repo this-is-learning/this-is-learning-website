@@ -1,5 +1,5 @@
-const plugin = require('tailwindcss/plugin')
-const colors = require('tailwindcss/colors')
+const plugin = require('tailwindcss/plugin');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   purge: {
@@ -89,7 +89,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms'),
     plugin(function ({ addComponents, theme }) {
-      const screens = theme('screens', {})
+      const screens = theme('screens', {});
       addComponents([
         {
           '.container': { width: '100%' },
@@ -129,7 +129,7 @@ module.exports = {
             },
           },
         },
-      ])
+      ]);
     }),
   ],
-}
+};
