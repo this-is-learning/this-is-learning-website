@@ -1,5 +1,3 @@
-
-
 .container {
   max-width: 100%;
   margin: 0 auto;
@@ -7,7 +5,7 @@
   padding: 0 40px;
 }
 .navbar {
-  background-color:transparent;
+  background-color: transparent;
   height: 70px;
 }
 
@@ -18,7 +16,6 @@
   width: 100%;
   background: #020c29;
   border-bottom: 1px solid gold;
-
 }
 
 .navbar {
@@ -29,94 +26,87 @@
   line-height: 50px;
 }
 
-
 .navbar .logo a:hover {
-color: #777777;
-
+  color: #777777;
 }
 
 .navbar nav {
   flex: 8;
 }
 
-  .navbar label {
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: pointer;
-    position: relative;
-    z-index: 3;
-    /* margin-left: 75px; */
-    /* float: right; */
-
+.navbar label {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  /* margin-left: 75px; */
+  /* float: right; */
 }
 
 .navbar label i {
-height: 2px;
-position: relative;
-transition: background .2s ease-out;
-width: 18px;
-font-style: normal;
-font-weight: normal;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+  font-style: normal;
+  font-weight: normal;
 }
 .navbar label i:before,
 .navbar label i:after {
-content: '';
-height: 100%;
-position: absolute;
-transition: all .2s ease-out;
-width: 100%;
+  content: '';
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
 }
 .navbar label i,
-.navbar label i:before{
-display: block;
-background: #eee;
+.navbar label i:before {
+  display: block;
+  background: #eee;
 }
 .navbar label i:after {
   display: block;
   background: white;
-  }
+}
 .navbar label i:before {
-top: 5px;
+  top: 5px;
 }
 .navbar label i:after {
-top: -5px;
+  top: -5px;
 }
 
 .navbar #navbar-toggle {
-display: none;
+  display: none;
 }
 
 .header #navbar-toggle:checked ~ .menu {
-visibility: visible;
-opacity: 0.99;
-overflow-y: auto;
-padding: 0px 0px;
-
+  visibility: visible;
+  opacity: 0.99;
+  overflow-y: auto;
+  padding: 0px 0px;
 }
 .header #navbar-toggle:checked ~ label {
-background: #212121;
-border-radius: 50%;
+  background: #212121;
+  border-radius: 50%;
 }
 // .header #navbar-toggle:checked ~ label i {
 // background: transparent;
 // }
 .header #navbar-toggle:checked ~ label i:before {
-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .header #navbar-toggle:checked ~ label i:after {
-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 .header #navbar-toggle:checked ~ label:not(.steps) i:before,
 .header #navbar-toggle:checked ~ label:not(.steps) i:after {
-top: 0;
+  top: 0;
 }
 
-
-.navbar nav a:hover
-  {
-    border-bottom: 2px green solid;
-
-  }
+.navbar nav a:hover {
+  border-bottom: 2px green solid;
+}
 
 @media (max-width: 768px) {
   .navbar nav {
@@ -132,10 +122,8 @@ top: 0;
     background: #ddd;
     background-color: #4fa04f;
   }
-  .navbar nav a:hover
-  {
+  .navbar nav a:hover {
     border-bottom: 2px rgb(128, 0, 53) solid;
-
   }
   .navbar nav ul {
     margin: 0;
@@ -151,13 +139,10 @@ top: 0;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease-out;
-
   }
   .navbar nav li a {
     color: #212121;
-
   }
-
 }
 
 @media (min-width: 768px) {

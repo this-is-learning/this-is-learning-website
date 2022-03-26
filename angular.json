@@ -48,10 +48,7 @@
             "polyfills": "apps/this-is-learning/src/polyfills.ts",
             "tsConfig": "apps/this-is-learning/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/this-is-learning/src/favicon.ico",
-              "apps/this-is-learning/src/assets"
-            ],
+            "assets": ["apps/this-is-learning/src/favicon.ico", "apps/this-is-learning/src/assets"],
             "styles": [
               "apps/this-is-learning/src/styles.scss",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
@@ -122,10 +119,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/this-is-learning/src/**/*.ts",
-              "apps/this-is-learning/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/this-is-learning/src/**/*.ts", "apps/this-is-learning/src/**/*.html"]
           }
         },
         "test": {
@@ -174,7 +168,7 @@
       "projectType": "library",
       "root": "libs/navbar",
       "sourceRoot": "libs/navbar/src",
-      "prefix": "this-is-learning",
+      "prefix": "til",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -187,10 +181,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/navbar/src/**/*.ts",
-              "libs/navbar/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/navbar/src/**/*.ts", "libs/navbar/src/**/*.html"]
           }
         }
       }
