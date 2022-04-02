@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'navigation',
+  displayName: 'navbar',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../coverage/libs/navigation',
+  coverageDirectory: '../../coverage/libs/navbar',
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',

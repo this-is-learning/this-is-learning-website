@@ -48,14 +48,10 @@
             "polyfills": "apps/this-is-learning/src/polyfills.ts",
             "tsConfig": "apps/this-is-learning/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/this-is-learning/src/favicon.ico",
-              "apps/this-is-learning/src/assets"
-            ],
+            "assets": ["apps/this-is-learning/src/favicon.ico", "apps/this-is-learning/src/assets"],
             "styles": [
               "apps/this-is-learning/src/styles.scss",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
-
             ],
             "scripts": []
           },
@@ -123,10 +119,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/this-is-learning/src/**/*.ts",
-              "apps/this-is-learning/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/this-is-learning/src/**/*.ts", "apps/this-is-learning/src/**/*.html"]
           }
         },
         "test": {
@@ -170,27 +163,25 @@
         }
       }
     },
-    "navigation": {
+
+    "navbar": {
       "projectType": "library",
-      "root": "libs/navigation",
-      "sourceRoot": "libs/navigation/src",
+      "root": "libs/navbar",
+      "sourceRoot": "libs/navbar/src",
       "prefix": "til",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/navigation"],
+          "outputs": ["coverage/libs/navbar"],
           "options": {
-            "jestConfig": "libs/navigation/jest.config.js",
+            "jestConfig": "libs/navbar/jest.config.js",
             "passWithNoTests": true
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/navigation/src/**/*.ts",
-              "libs/navigation/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/navbar/src/**/*.ts", "libs/navbar/src/**/*.html"]
           }
         }
       }

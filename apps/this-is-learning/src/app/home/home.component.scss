@@ -1,0 +1,306 @@
+
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.card {
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+  color: brown;
+}
+
+.grid-resource {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.my-2 {
+  margin: 1.5rem 0;
+}
+
+.my-4 {
+  margin: 3rem 0;
+}
+
+.py-5 {
+  padding: 3rem;
+}
+
+h1,
+h2 {
+  line-height: 1;
+  margin: 10px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+/* Showcase */
+.showcase {
+  height: 650px;
+  background-color: #020c29;
+  color: #fff;
+  position: relative;
+  z-index: 0;
+}
+
+.showcase h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.showcase p {
+  margin: 20px 0;
+}
+
+.showcase .grid {
+  overflow: visible;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 70px;
+}
+
+.showcase-text {
+  animation: slideInFromLeft 1s ease-in;
+  top: -115px;
+  position: relative;
+}
+
+.showcase-text p {
+  font-size: x-large;
+}
+
+.showcase-form {
+  position: relative;
+  bottom: 170px;
+  height: 200px;
+  width: 300px;
+  padding: 40px;
+  z-index: 100;
+  justify-self: center;
+  animation: slideInFromRight 1s ease-in;
+}
+
+.showcase::before,
+.showcase::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  bottom: -2px;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid gold;
+  background: linear-gradient(250deg, #0f0125 10%, #020c29 86%);
+  transform: skewY(-3deg);
+  /* -webkit-transform: skewY(-3deg); */
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
+}
+
+/* Stats */
+.stats {
+  padding-top: 250px;
+  background-color: #020c29;
+}
+.stats .card {
+  height: 300px;
+  transition: transform 0.2s ease-in;
+  cursor: pointer;
+}
+.stats .card h2 a {
+  text-align: start;
+  color: #f4f4f4;
+  font-size: 26px;
+}
+.stats .card h2 a:hover {
+  border-bottom: 2px green solid;
+}
+.title {
+  font-weight: 100;
+  color: transparent;
+  font-size: 65px;
+  background: url('../../assets/images/rainbow-nebula.jpg') repeat;
+  background-position: 40% 50%;
+  -webkit-background-clip: text;
+  position: relative;
+  text-align: center;
+}
+
+.stats .card h4:nth-child(3) {
+  text-align: start;
+  color: #f4f4f4;
+  font-size: 16px;
+}
+.stats-heading {
+  max-width: 500px;
+  margin: auto;
+}
+
+.stats .grid h3 {
+  font-size: 35px;
+}
+
+.stats .grid p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer {
+  border-top: 0.1px solid gold;
+  background-color: #020c29;
+}
+.footer h1 {
+  padding-bottom: 0px;
+  font-size: larger;
+}
+.footer .social a {
+  margin: 0 10px;
+}
+
+.fa-brands:hover {
+  color: #5cb85c;
+}
+
+.fa-github:hover {
+  cursor: pointer;
+}
+
+.fa-facebook:hover {
+  color: #1773ea;
+}
+
+.fa-instagram:hover {
+  color: #b32e87;
+}
+
+.fa-twitter:hover {
+  color: #1c9cea;
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Tablets and under */
+@media (max-width: 768px) {
+  .grid,
+  .showcase .grid,
+  .stats .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .showcase {
+    height: auto;
+  }
+
+  .showcase-text {
+    text-align: center;
+    margin-top: 40px;
+    animation: slideInFromTop 1s ease-in;
+    margin-top: -90px;
+    padding-top: 0px !important;
+  }
+
+  .showcase-form {
+    justify-self: center;
+    margin: auto;
+    animation: slideInFromBottom 1s ease-in;
+
+    width: 300px;
+    bottom: -415px;
+    height: 200px;
+    margin-top: 10px;
+  }
+
+  .stats {
+    padding-top: 750px;
+  }
+
+  .santosh {
+    bottom: -450px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .showcase-form {
+    width: 300px;
+    bottom: -530px;
+    height: 200px;
+  }
+  .santosh {
+    bottom: -455px;
+  }
+}
+
+@media (max-width: 1450px) {
+  .showcase-text {
+    padding-top: 120px;
+  }
+}
